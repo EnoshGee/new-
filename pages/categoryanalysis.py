@@ -1,8 +1,10 @@
 import pandas as pd
 import plotly.express as px
 import dash
-from dash import html, dcc
+from dash import html, dcc,dash_table
 import dash_bootstrap_components as dbc
+from dash.dash_table import FormatTemplate
+import dash_ag_grid as dag
 
 dash.register_page(__name__, path = "/categoryanalysis", title = "Category Analysis")
 
@@ -130,6 +132,8 @@ monthlycategorytrenddistribution.update_layout(yaxis = dict(showticklabels = Fal
 
 monthlycategorytrenddistribution.update_yaxes(showgrid = False, gridcolor = 'rgba(0,0,0,0)', zeroline = False, zerolinecolor = "rgba(0, 0, 0, 0)")
 monthlycategorytrenddistribution.update_xaxes(showgrid = False, gridcolor = 'rgba(0,0,0,0)', zeroline = False, zerolinecolor = "rgba(0, 0, 0, 0)")
+
+
 
 layout = html.Div(
     children = [
